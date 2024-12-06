@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="nav">
+      <div><img class="profile-icon" src="https://img.icons8.com/?size=100&id=7819&format=png&color=FFFFFF " alt=""
+          srcset="" style="width: 50px; height: 50px;"></div>
+      <div class="logo">
+        <div class="lgh"><i>
+            <h1 class="logo-heading">
+              <h1 class="gradient-text">
+                <span class="sub">Sub</span>
+                <span class="dash">-</span>
+                <span class="k">K</span>
+              </h1>
+            </h1>
+          </i></div><br>
+        <h3 class="user-name">Hello! kunal</h3>
+      </div>
+      <div class="bell-icon">
+        <img src="https://img.icons8.com/?size=100&id=61187&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+        <img src="https://img.icons8.com/?size=100&id=25628&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="section-title" data-translate="preferredPaymentMethods">Preferred Payment Methods</div>
+      <div class="payment-method">
+        <div>
+          <label>
+            <input type="radio" name="payment" /> <span data-translate="netbankingAxis">Netbanking - Axis Bank</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="payment" /> <span data-translate="netbankingPNB">Netbanking - Punjab National Bank</span>
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="payment" /> <span data-translate="upiPayTM">UPI - PayTM</span>
+          </label>
+        </div>
+      </div>
+      <div class="section-title" data-translate="upiCardsMore">UPI, Cards & More</div>
+      <div class="upi-options">
+        <div class="upi-option">
+          <img src="https://via.placeholder.com/40" alt="Google Pay">
+          <span data-translate="googlePay">Google Pay</span>
+        </div>
+        <div class="upi-option">
+          <img src="https://via.placeholder.com/40" alt="PhonePe">
+          <span data-translate="phonePe">PhonePe</span>
+        </div>
+        <div class="upi-option">
+          <img src="https://via.placeholder.com/40" alt="CRED">
+          <span data-translate="cred">CRED</span>
+        </div>
+        <div class="upi-option">
+          <img src="https://via.placeholder.com/40" alt="Others">
+          <span data-translate="others">Others</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="amount" data-translate="amount">₹8,620.00</div>
+      <button><a href="../page 4/index.html" data-translate="payNow">Pay Now</a></button>
+    </div>
+    <button id="chatbot-btn" data-translate="chatbot">ChatBot</button>
+  </div>
+
+
+  <!-- language dropdown -->
+  <div class="language-toggle">
+    <select id="languageSwitch" onchange="toggleLanguage()">
+      <option id="lang-btn1" value="english" selected>English</option>
+      <option id="lang-btn2" value="hindi">हिंदी</option>
+      <option id="lang-btn3" value="bengali">বাংলা</option>
+    </select>
+  </div>
+
+
+  <script>
+    // Translation object
+    const translations = {
+      english: {
+        helloUser: "Hello! Kunal",
+        preferredPaymentMethods: "Preferred Payment Methods",
+        netbankingAxis: "Netbanking - Axis Bank",
+        netbankingPNB: "Netbanking - Punjab National Bank",
+        upiPayTM: "UPI - PayTM",
+        upiCardsMore: "UPI, Cards & More",
+        googlePay: "Google Pay",
+        phonePe: "PhonePe",
+        cred: "CRED",
+        others: "Others",
+        amount: "₹8,620.00",
+        payNow: "Pay Now",
+        chatbot: "ChatBot"
+      },
+      hindi: {
+        helloUser: "नमस्ते! कुनाल",
+        preferredPaymentMethods: "पसंदीदा भुगतान विधियाँ",
+        netbankingAxis: "नेटबैंकिंग - एक्सिस बैंक",
+        netbankingPNB: "नेटबैंकिंग - पंजाब नेशनल बैंक",
+        upiPayTM: "यूपीआई - पेटीएम",
+        upiCardsMore: "यूपीआई, कार्ड्स और अधिक",
+        googlePay: "गूगल पे",
+        phonePe: "फोनपे",
+        cred: "CRED",
+        others: "अन्य",
+        amount: "₹8,620.00",
+        payNow: "अभी भुगतान करें",
+        chatbot: "चैटबोट"
+      },
+      bengali: {
+        helloUser: "হ্যালো! কুনাল",
+        preferredPaymentMethods: "প্রিফার্ড পেমেন্ট মেথড",
+        netbankingAxis: "নেটব্যাঙ্কিং - এক্সিস ব্যাংক",
+        netbankingPNB: "নেটব্যাঙ্কিং - পাঞ্জাব ন্যাশনাল ব্যাংক",
+        upiPayTM: "ইউপিআই - পেটিএম",
+        upiCardsMore: "ইউপিআই, কার্ডস ও আরও",
+        googlePay: "গুগল পে",
+        phonePe: "ফোনপে",
+        cred: "CRED",
+        others: "অন্যান্য",
+        amount: "₹8,620.00",
+        payNow: "এখনই পরিশোধ করুন",
+        chatbot: "চ্যাটবট"
+      }
+    };
+
+    // Function to toggle language
+    function toggleLanguage() {
+      const language = document.getElementById("languageSwitch").value;
+      const elementsToTranslate = document.querySelectorAll("[data-translate]");
+      elementsToTranslate.forEach((element) => {
+        const translationKey = element.getAttribute("data-translate");
+        element.innerHTML = translations[language][translationKey] || element.innerHTML;
+      });
+    }
+
+  </script>
+
+</body>
+
+
+
+</html>

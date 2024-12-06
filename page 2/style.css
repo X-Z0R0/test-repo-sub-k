@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+ 
+  .main-container {
+    width: 500px;
+    height: 100vh; /* Full height of the viewport */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+ 
+  .nav{
+      background-color:#2596be;
+      display: flex;
+      height: 100px;
+      justify-content: space-between;
+   }
+  
+   .profile-icon{
+      margin: 30px;
+   }
+  
+   .logo{
+      margin-top: 10px;
+      display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+  
+   }
+  
+   .lgh{
+      height: 50px;
+      width: 170px;
+      border-radius: 30px 30px 30px 30px;
+      text-align: center;
+      border:white;
+      background-color: white;
+      
+   }
+  
+   .logo-heading{
+      font-size: 40px;
+     
+   }
+  
+   .gradient-text .sub {
+      color: #2596be;
+    }
+  
+    .gradient-text .dash {
+      color:  rgb(197, 33, 33);
+    }
+  
+    .gradient-text .k {
+      color: rgb(197, 33, 33); /* Change as needed */
+    }
+  
+  .user-name{
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: space-between;
+     
+  }
+  
+   .bell-icon{
+      margin: 30px;
+  
+   }
+  .container {
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+ 
+  .title-bar {
+    background-color:#2596be;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+ 
+  .content {
+    padding: 20px;
+  }
+ 
+  .pay-now {
+    text-align: center;
+    margin-top: 70px;
+  }
+ 
+  .pay-now button {
+    background-color: #e60000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it appears above all other content */
+    display: none; /* Hidden by default */
+  }
+
+  /* Popup box styling */
+  .popup {
+    background-color: white;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Close button styling */
+  .popup .close-btn {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    left: 170px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Styling for the options inside the popup */
+  .popup button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  /* Highlighted blue button */
+  .popup button.blue {
+    background-color:  #e0e0e0; /* Blue background */
+    color:#333;
+  }
+
+  /* Default grey buttons */
+  .popup button.grey {
+    background-color: #e0e0e0; /* Light grey background */
+    color: #333; /* Darker text */
+  }
+
+  /* Hover effects for buttons */
+  .popup button.blue:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+
+  .popup button.grey:hover {
+    background-color:#0056b3; /* Slightly darker grey */
+  }
+
+  /* To display the popup when the 'active' class is added to the overlay */
+  .overlay.active {
+    display: flex;
+  }
+ 
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .footer a {
+    text-decoration: none;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+  }
+ 
+  .footer a img {
+    max-width: 30px;
+  }
+ 
+  .footer a span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+
+
+form {
+    width: 95%;
+    margin: 10px auto;
+    text-align: center;
+    background-color: rgb(229, 229, 255);
+    padding: 10px;
+    border-radius: 15px;
+    height: 77%;
+}
+
+.blue-section {
+    background-color: #007bff;
+    border-radius: 20px;
+    color: white;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.blue-section > div > input {
+    color: white;
+    font-weight: bold;
+    border: none;
+    background: none;
+    text-align: center;
+
+}
+
+.form-group {
+    display: flex; 
+    align-items: start;
+}
+
+.form-group-b {
+    display: flex; 
+    align-items: center;
+    margin: 0px auto;
+}
+
+label {
+    flex: 0 0 150px; 
+    text-align: center; 
+    margin : 10px 10px 10px 10px; 
+
+}
+
+input {
+    flex: 1; 
+    background: rgb(255, 243, 243);
+    border: none;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    width: 80%;
+}
+
+.list-group {
+    margin: 5px;
+}
+
+.list-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group li {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 5px;
+}
+
+.list-group li > div {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
+
+.list-group li > div > span {
+    margin-right: 10px; 
+}
+
+.select-all {
+    display: flex;
+}
+
+
+#first {
+  color: rgb(63, 63, 251);
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 3px;
+}
+#second {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30%;
+  padding: 0; 
+}
+
+#show-popup-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 16% auto;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: none; /* Initially hidden */
+  z-index: 999;
+}
+
+.popup {
+  display: none; /* Initially hidden */
+  width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.popup h3 {
+  margin: 0 0 20px;
+}
+
+.popup .member-list {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.popup .member-list div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.popup .total {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #f0f0f0;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+.slider {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  left: 0;
+  transition: left 0.3s;
+}
+
+.slide-container p {
+  margin: 10px 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+} 
+
+
+
+#chatbot-btn {
+  width: 100px;
+  height: 40px;
+  border: 3px solid #2596be;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: white;
+  font-size: 1em;
+  font-weight: 550;
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+}
+
+#chatbot-btn:hover {
+  background: #2596be;
+  color: white;
+  font-size: 1.1em;
+}
+
+/* lanuage dropdown  */
+.language-toggle {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  background-color: #2596be;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+}
+
+lang-btn1, lang-btn2, lang-btn3{
+  color: white;
+  background: #2596be;
+}
+
+#languageSwitch {
+  color: white;
+  background: #2596be;
+  margin: auto;
+  font-size: 16px;
+  border: none;
+  margin: 10px 14px;
+}
+
+.language-toggle option {
+  background-color: #2596be;
+  width: 90px;
+  padding: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.language-toggle button:hover {
+  background-color: #d7d7d7;
+}

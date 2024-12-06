@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay EMI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <div class="nav">
+      <div><img class="profile-icon" src="https://img.icons8.com/?size=100&id=7819&format=png&color=FFFFFF " alt=""
+          srcset="" style="width: 50px; height: 50px;"></div>
+      <div class="logo">
+        <div class="lgh"><i>
+            <h1 class="logo-heading">
+              <h1 class="gradient-text">
+                <span class="sub">Sub</span>
+                <span class="dash">-</span>
+                <span class="k">K</span>
+              </h1>
+            </h1>
+          </i></div><br>
+        <h3 class="user-name" data-translate="hello">Hello! kunal</h3>
+      </div>
+      <div class="bell-icon">
+
+        <img src="https://img.icons8.com/?size=100&id=61187&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+        <img src="https://img.icons8.com/?size=100&id=25628&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+      </div>
+    </div>
+
+
+    <form>
+      <div class="blue-section">
+        <div class="form-group-b">
+          <label for="center-number" data-translate="centerNumber">Center Number:</label>
+          <input type="text" id="center-number" name="center-number" value="Test Center">
+        </div>
+
+        <div class="form-group-b">
+          <label for="group-name" data-translate="groupName">Group Name:</label>
+          <input type="text" id="group-name" name="group-name" value="Test Group">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="members" data-translate="members">Members:</label>
+        <input type="text" id="members" name="members" value="4">
+      </div>
+
+      <div class="form-group">
+        <label for="total-emi-due" data-translate="totalEMIDue">Total EMI Due:</label>
+        <input type="text" id="total-emi-due" name="total-emi-due" value="₹8,620.00">
+      </div>
+
+      <div class="form-group">
+        <label for="disbursement-date" data-translate="disbursementDate">Disbursement Date:</label>
+        <input type="date" id="disbursement-date" name="disbursement-date" value="2024-01-19">
+      </div>
+
+      <div class="form-group">
+        <label for="branch-name" data-translate="branchName">Branch Name:</label>
+        <input type="text" id="branch-name" name="branch-name" value="Test Branch">
+      </div>
+
+      <div class="form-group">
+        <label for="csr-name" data-translate="csrName">CSR Name:</label>
+        <input type="text" id="csr-name" name="csr-name" value="Test CSR">
+      </div>
+
+      <div class="select-all">
+        <div id="first">
+          <span data-translate="expandAll">Expand All</span>
+        </div>
+        <div id="second">
+          <input type="checkbox" id="select-all">
+          <label for="select-all" id="raghu" data-translate="selectAll">Select All</label>
+        </div>
+      </div>
+
+      <div class="list-group">
+        <ul>
+          <li>
+            <span data-translate="user">Test User1</span>
+            <div>
+              <span>₹2,155.00</span>
+              <input type="checkbox" checked>
+            </div>
+          </li>
+          <li>
+            <span data-translate="user">Test User2</span>
+            <div>
+              <span>₹2,155.00</span>
+              <input type="checkbox" checked>
+            </div>
+          </li>
+          <li>
+            <span data-translate="user">Test User3</span>
+            <div>
+              <span>₹2,155.00</span>
+              <input type="checkbox" checked>
+            </div>
+          </li>
+          <li>
+            <span data-translate="user">Test User4</span>
+            <div>
+              <span>₹2,155.00</span>
+              <input type="checkbox" checked>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <span><b data-translate="totalAmountPayable">Total Amount Payable (4 of 4 Members): Rs.8,620.00</b></span>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" id="show-popup-btn" data-translate="paymentSummary">Summary</button>
+      </div>
+    </form>
+
+
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Popup Payment Summary -->
+    <div class="popup" id="popup">
+      <button class="close-btn" id="close-popup-btn" data-translate="closeBtn">X</button>
+      <h3 data-translate="paymentSummaryTitle">Payment Summary</h3>
+      <div class="member-list">
+        <div><span data-translate="user">Test User1</span><span>₹2,155.00</span></div>
+        <div><span data-translate="user">Test User2</span><span>₹2,155.00</span></div>
+        <div><span data-translate="user">Test User3</span><span>₹2,155.00</span></div>
+        <div><span data-translate="user">Test User4</span><span>₹2,155.00</span></div>
+      </div>
+      <div class="total">
+        <span data-translate="total">Total</span>
+        <span>₹8,620.00</span>
+      </div>
+      <div class="slide-container" id="slide-container">
+        <div class="slider" id="slider">➔</div>
+        <p id="slide-text" data-translate="slideToPay">Slide to Pay ₹8,620.00</p>
+      </div>
+    </div>
+
+
+
+    <!-- language dropdown -->
+    <div class="language-toggle">
+      <select id="languageSwitch" onchange="toggleLanguage()">
+        <option id="lang-btn1" value="english" selected>English</option>
+        <option id="lang-btn2" value="hindi">हिंदी</option>
+        <option id="lang-btn3" value="bengali">বাংলা</option>
+      </select>
+    </div>
+
+    <div class="footer">
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=000000" alt="Home">
+        <span data-translate="home">Home</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=77125&format=png&color=000000" alt="Pay">
+        <span data-translate="pay">Pay</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=vTmwocrZFLBy&format=png&color=000000" alt="VCM">
+        <span data-translate="vcm">VCM</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=58761&format=png&color=000000" alt="Receipt">
+        <span data-translate="receipt">Receipt</span>
+      </a>
+    </div>
+    <button id="chatbot-btn" data-translate="chatbot">ChatBot</button>
+
+
+    <script>
+
+      // Show popup on button click
+      document.getElementById('show-popup-btn').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+        document.getElementById('popup').style.display = 'block'; // Show the popup
+        document.getElementById('overlay').style.display = 'block'; // Show the overlay
+      });
+
+      // Close popup when clicking the close button
+      document.getElementById('close-popup-btn').addEventListener('click', function () {
+        document.getElementById('popup').style.display = 'none'; // Hide the popup
+        document.getElementById('overlay').style.display = 'none'; // Hide the overlay
+      });
+
+
+      const slider = document.getElementById('slider');
+      const container = document.getElementById('slide-container');
+      const text = document.getElementById('slide-text');
+      let isSliding = false;
+
+      slider.addEventListener('mousedown', () => {
+        isSliding = true;
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isSliding) {
+          let rect = container.getBoundingClientRect();
+          let offset = Math.min(Math.max(e.clientX - rect.left, 0), rect.width - slider.offsetWidth);
+          slider.style.left = offset + 'px';
+
+          if (offset + slider.offsetWidth >= rect.width) {
+            text.textContent = 'Payment Successful!';
+            container.classList.add('slide-complete');
+            slider.style.left = rect.width - slider.offsetWidth + 'px';
+            isSliding = false;
+
+            // Redirect to the next page
+            setTimeout(() => {
+              window.location.href = '../page 3/index.html';
+            }, 500);
+          }
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (isSliding) {
+          slider.style.left = '0';
+          isSliding = false;
+        }
+      });
+
+      //change language 
+      const translations = {
+        english: {
+          centerNumber: "Center Number:",
+          groupName: "Group Name:",
+          members: "Members:",
+          totalEMIDue: "Total EMI Due:",
+          disbursementDate: "Disbursement Date:",
+          branchName: "Branch Name:",
+          csrName: "CSR Name:",
+          expandAll: "Expand All",
+          selectAll: "Select All",
+          paymentSummary: "Payment Summary",
+          slideToPay: "Slide to Pay ₹8,620.00",
+          totalAmountPayable: "Total Amount Payable (4 of 4 Members): Rs.8,620.00",
+          home: "Home",
+          pay: "Pay",
+          vcm: "VCM",
+          receipt: "Receipt",
+          submit: "Submit",
+          cancel: "Cancel",
+          language: "Language",
+          summary: "Summary",
+          formTitle: "Payment Form",
+          instructions: "Please fill out the form to complete the payment process.",
+          hello: "Hello! Kunal",
+          profileIconAlt: "Profile Icon",
+          notification: "Notification",
+          termsAndConditions: "Terms & Conditions",
+          privacyPolicy: "Privacy Policy",
+          logout: "Logout",
+          languageChangePrompt: "Please choose your preferred language.",
+          chatbot: "ChatBot",
+          closeBtn: "X",
+          paymentSummaryTitle: "Payment Summary",
+          user: "Test User", // Placeholder for user names, you may update dynamically as needed
+          total: "Total",
+          slideToPay: "Slide to Pay ₹8,620.00"
+        },
+        hindi: {
+          centerNumber: "केंद्र संख्या:",
+          groupName: "समूह का नाम:",
+          members: "सदस्य:",
+          totalEMIDue: "कुल ईएमआई बकाया:",
+          disbursementDate: "वितरण की तिथि:",
+          branchName: "शाखा का नाम:",
+          csrName: "सीएसआर का नाम:",
+          expandAll: "सभी विस्तृत करें",
+          selectAll: "सभी का चयन करें",
+          paymentSummary: "भुगतान सारांश",
+          slideToPay: "₹8,620.00 का भुगतान करने के लिए स्लाइड करें",
+          totalAmountPayable: "कुल देय राशि (4 में से 4 सदस्य): रु.8,620.00",
+          home: "मुख्य पृष्ठ",
+          pay: "भुगतान करें",
+          vcm: "वीसीएम",
+          receipt: "रसीद",
+          submit: "सबमिट करें",
+          cancel: "रद्द करें",
+          language: "भाषा",
+          summary: "सारांश",
+          formTitle: "भुगतान फॉर्म",
+          instructions: "भुगतान प्रक्रिया को पूरा करने के लिए कृपया फॉर्म भरें।",
+          hello: "नमस्ते! कुणाल",
+          profileIconAlt: "प्रोफाइल आइकन",
+          notification: "सूचना",
+          termsAndConditions: "नियम और शर्तें",
+          privacyPolicy: "गोपनीयता नीति",
+          logout: "लॉग आउट",
+          languageChangePrompt: "कृपया अपनी पसंदीदा भाषा चुनें।",
+          chatbot: "चैटबॉट",
+          closeBtn: "X",
+          paymentSummaryTitle: "भुगतान सारांश",
+          user: "टेस्ट यूज़र", // Placeholder for user names, to be updated dynamically
+          total: "कुल",
+          slideToPay: "₹8,620.00 का भुगतान करने के लिए स्लाइड करें"
+        },
+        bengali: {
+          centerNumber: "কেন্দ্র নম্বর:",
+          groupName: "গ্রুপের নাম:",
+          members: "সদস্য:",
+          totalEMIDue: "মোট ইএমআই বাকি:",
+          disbursementDate: "বিতরণ তারিখ:",
+          branchName: "শাখার নাম:",
+          csrName: "সিএসআর নাম:",
+          expandAll: "সব সম্প্রসারিত করুন",
+          selectAll: "সব নির্বাচন করুন",
+          paymentSummary: "পেমেন্ট সারাংশ",
+          slideToPay: "₹8,620.00 পরিশোধ করতে স্লাইড করুন",
+          totalAmountPayable: "মোট প্রদানযোগ্য পরিমাণ (4 এর মধ্যে 4 সদস্য): ₹8,620.00",
+          home: "হোম",
+          pay: "পরিশোধ করুন",
+          vcm: "ভিসিএম",
+          receipt: "রসিদ",
+          submit: "জমা দিন",
+          cancel: "বাতিল করুন",
+          language: "ভাষা",
+          summary: "সারাংশ",
+          formTitle: "পেমেন্ট ফর্ম",
+          instructions: "অনুগ্রহ করে পেমেন্ট প্রক্রিয়া সম্পূর্ণ করতে ফর্মটি পূর্ণ করুন।",
+          hello: "হ্যালো! কুনাল",
+          profileIconAlt: "প্রোফাইল আইকন",
+          notification: "নোটিফিকেশন",
+          termsAndConditions: "শর্তাবলী",
+          privacyPolicy: "গোপনীয়তা নীতি",
+          logout: "লগ আউট",
+          languageChangePrompt: "আপনার পছন্দের ভাষা নির্বাচন করুন।",
+          chatbot: "চ্যাটবট",
+          closeBtn: "X",
+          paymentSummaryTitle: "পেমেন্ট সারাংশ",
+          user: "টেস্ট ব্যবহারকারী", // Placeholder for user names, to be updated dynamically
+          total: "মোট",
+          slideToPay: "₹8,620.00 পরিশোধ করতে স্লাইড করুন"
+
+        }
+      };
+
+      let currentLanguage = "english";
+
+      function toggleLanguage() {
+        const selectedLanguage = document.getElementById("languageSwitch").value;
+        currentLanguage = selectedLanguage;
+
+        document.querySelectorAll("[data-translate]").forEach(element => {
+          const key = element.dataset.translate;
+          element.textContent = translations[currentLanguage][key];
+        });
+      }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #2596be;
+}
+
+header {
+    padding: 20px;
+    color: white;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.left-icons,
+.right-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0066ff;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+.greeting {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.success-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.transaction-section {
+    margin: 30px 0;
+    text-align: left;
+}
+
+h2 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    color: #666;
+}
+
+.value {
+    font-weight: 500;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #0066ff;
+    color: #0066ff;
+}
+
+.btn-primary {
+    background: #0066ff;
+    border: none;
+    color: white;
+}
+
+.share-icon {
+    font-size: 20px;
+}
+
+
+
+#chatbot-btn {
+    width: 100px;
+    height: 40px;
+    border: 3px solid #2596be;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 1em;
+    font-weight: 550;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+#chatbot-btn:hover {
+    background: #2596be;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* lanuage dropdown  */
+.language-toggle {
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    background-color: #2596be;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+}
+
+lang-btn1,
+lang-btn2,
+lang-btn3 {
+    color: white;
+    background: #2596be;
+}
+
+#languageSwitch {
+    color: white;
+    background: #2596be;
+    margin: auto;
+    font-size: 16px;
+    border: none;
+    margin: 10px 14px;
+}
+
+.language-toggle option {
+    background-color: #2596be;
+    width: 90px;
+    padding: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.language-toggle button:hover {
+    background-color: #d7d7d7;
+}

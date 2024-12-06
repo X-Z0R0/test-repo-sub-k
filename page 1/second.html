@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-K</title>
+  <link rel="stylesheet" href="second.css">
+  <script src="second.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="nav">
+      <div><img class="profile-icon" src="https://img.icons8.com/?size=100&id=7819&format=png&color=FFFFFF " alt=""
+          srcset="" style="width: 50px; height: 50px;"></div>
+      <div class="logo">
+        <div class="lgh"><i>
+            <h1 class="logo-heading">
+              <h1 class="gradient-text">
+                <span class="sub">Sub</span>
+                <span class="dash">-</span>
+                <span class="k">K</span>
+              </h1>
+            </h1>
+          </i></div><br>
+        <h3 class="user-name" data-translate="hello">Hello! kunal</h3>
+      </div>
+      <div class="bell-icon">
+
+        <img src="https://img.icons8.com/?size=100&id=61187&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+        <img src="https://img.icons8.com/?size=100&id=25628&format=png&color=FFFFFF" alt=""
+          style="width: 50px; height: 50px;">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="title-bar" data-translate="hello">EMI Payment</div>
+      <div class="content">
+
+        <div class="pay-now">
+          <button id="ppp" onclick="openPopup()" data-translate="payNow">Pay Now</button>
+          <div class="overlay" id="popupOverlay">
+            <div class="popup">
+              <!-- Close button -->
+              <button class="close-btn" onclick="closePopup()">×</button>
+              <!-- Title and options -->
+              <h2 id="pay-emi" data-translate="payEMI">Pay EMI</h2>
+              <button class="blue" id="btn1"><a href="../page 2/index.html" data-translate="payingForTheWholeGroup">1. Paying for the whole group</a></button>
+              <button class="grey" id="btn2"><a href="../page 2/index.html" data-translate="payingForOneself">2. Paying for oneself</a></button>
+              <button class="grey" id="btn3"><a href="../page 2/index.html" data-translate="payingForAllExceptOneMember">3. Paying for all except one
+                  member</a></button>
+              <button class="grey" id="btn4"><a href="../page 2/index.html" data-translate="payingForOneselfWithPartialPayment">4. Pay for oneself with a partial
+                  payment</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="spinner">
+      <div class="spinnerin"><button id="chatbotButton"></button></div>
+    </div>
+
+    <video id="chatbotVideo" width="600" muted autoplay loop style="display: none;">
+      <source src="../../20241125184403344~2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+
+    <div class="footer">
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=000000" alt="Home">
+        <span data-translate="home">Home</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=77125&format=png&color=000000" alt="Pay">
+        <span data-translate="pay">Pay</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=vTmwocrZFLBy&format=png&color=000000" alt="VCM">
+        <span data-translate="vcm">VCM</span>
+      </a>
+      <a>
+        <img src="https://img.icons8.com/?size=100&id=58761&format=png&color=000000" alt="Receipt">
+        <span data-translate="receipt">Receipt</span>
+      </a>
+    </div>
+
+    <!-- language dropdown -->
+    <div class="language-toggle">
+      <select id="languageSwitch" onchange="toggleLanguage()">
+        <option id="lang-btn1" value="english" selected>English</option>
+        <option id="lang-btn2" value="hindi">हिंदी</option>
+        <option id="lang-btn3" value="bengali">বাংলা</option>
+      </select>
+    </div>
+
+
+
+
+    <!-- chatbot btn  -->
+    <button id="chatbot-btn" data-translate="chatbot">ChatBot</button>
+
+  </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+</script>
+
+</html>

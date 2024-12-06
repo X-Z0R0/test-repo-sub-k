@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="left-icons">
+                    <div class="profile-icon">T</div>
+                </div>
+                <div class="logo">Sub-K</div>
+                <div class="right-icons">
+                    <div class="icon">🔔</div>
+                    <div class="icon">🌐</div>
+                </div>
+            </div>
+            <div class="greeting" data-translate="greeting">Hello! Kunal</div>
+        </header>
+
+        <main>
+            <div class="success-card">
+                <div class="success-icon">✓</div>
+                <h1 data-translate="paymentSuccessHeading">Payment Success!</h1>
+
+                <div class="transaction-section">
+                    <h2 data-translate="transactionDetails">Transaction Details</h2>
+                    <div class="details">
+                        <div class="detail-row">
+                            <span class="label" data-translate="totalAmountLabel">Total Amount</span>
+                            <span class="value" data-translate="amount">₹8,620.00</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label" data-translate="transactionIDLabel">Transaction ID</span>
+                            <span class="value">1001542</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label" data-translate="paymentMethodLabel">Payment Method</span>
+                            <span class="value" data-translate="upi">UPI</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="label" data-translate="paymentTimeLabel">Payment Time</span>
+                            <span class="value">09 Aug 2024 15:35:50.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-outline" data-translate="viewReceiptBtn">View Receipt</button>
+                    <button class="btn btn-primary">
+                        <span class="share-icon">↗</span> <span data-translate="shareBtn">Share</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <!-- language dropdown -->
+        <div class="language-toggle">
+            <select id="languageSwitch" onchange="toggleLanguage()">
+                <option id="lang-btn1" value="english" selected>English</option>
+                <option id="lang-btn2" value="hindi">हिंदी</option>
+                <option id="lang-btn3" value="bengali">বাংলা</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        // Translation object
+        const translations = {
+            english: {
+                paymentSuccessTitle: "Payment Success",
+                logo: "Sub-K",
+                notification: "🔔",
+                language: "🌐",
+                greeting: "Hello! Kunal",
+                paymentSuccessHeading: "Payment Success!",
+                transactionDetails: "Transaction Details",
+                totalAmountLabel: "Total Amount",
+                amount: "₹8,620.00",
+                transactionIDLabel: "Transaction ID",
+                paymentMethodLabel: "Payment Method",
+                upi: "UPI",
+                paymentTimeLabel: "Payment Time",
+                viewReceiptBtn: "View Receipt",
+                shareBtn: "Share"
+            },
+            hindi: {
+                paymentSuccessTitle: "भुगतान सफलता",
+                logo: "सब-के",
+                notification: "🔔",
+                language: "🌐",
+                greeting: "नमस्ते! कुनाल",
+                paymentSuccessHeading: "भुगतान सफलता!",
+                transactionDetails: "लेन-देन विवरण",
+                totalAmountLabel: "कुल राशि",
+                amount: "₹8,620.00",
+                transactionIDLabel: "लेन-देन आईडी",
+                paymentMethodLabel: "भुगतान विधि",
+                upi: "यूपीआई",
+                paymentTimeLabel: "भुगतान समय",
+                viewReceiptBtn: "रसीद देखें",
+                shareBtn: "साझा करें"
+            },
+            bengali: {
+                paymentSuccessTitle: "পেমেন্ট সফল",
+                logo: "সাব-কে",
+                notification: "🔔",
+                language: "🌐",
+                greeting: "হ্যালো! কুনাল",
+                paymentSuccessHeading: "পেমেন্ট সফল!",
+                transactionDetails: "লেনদেনের বিবরণ",
+                totalAmountLabel: "মোট পরিমাণ",
+                amount: "₹8,620.00",
+                transactionIDLabel: "লেনদেন আইডি",
+                paymentMethodLabel: "পেমেন্ট পদ্ধতি",
+                upi: "ইউপিআই",
+                paymentTimeLabel: "পেমেন্ট সময়",
+                viewReceiptBtn: "রসিদ দেখুন",
+                shareBtn: "শেয়ার করুন"
+            }
+        };
+
+        // Function to toggle language
+        function toggleLanguage() {
+            const language = document.getElementById("languageSwitch").value;
+            const elementsToTranslate = document.querySelectorAll("[data-translate]");
+            elementsToTranslate.forEach((element) => {
+                const translationKey = element.getAttribute("data-translate");
+                element.innerHTML = translations[language][translationKey] || element.innerHTML;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
