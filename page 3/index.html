@@ -44,7 +44,8 @@
         </div>
         <div>
           <label>
-            <input type="radio" name="payment" /> <span data-translate="netbankingPNB">Netbanking - Punjab National Bank</span>
+            <input type="radio" name="payment" /> <span data-translate="netbankingPNB">Netbanking - Punjab National
+              Bank</span>
           </label>
         </div>
         <div>
@@ -142,14 +143,36 @@
     };
 
     // Function to toggle language
-    function toggleLanguage() {
-      const language = document.getElementById("languageSwitch").value;
+    let currentLanguage = localStorage.getItem("selectedLanguage") || "english";
+
+    // Apply Translations
+    function applyTranslations() {
       const elementsToTranslate = document.querySelectorAll("[data-translate]");
       elementsToTranslate.forEach((element) => {
         const translationKey = element.getAttribute("data-translate");
-        element.innerHTML = translations[language][translationKey] || element.innerHTML;
+        element.innerHTML = translations[currentLanguage][translationKey] || element.innerHTML;
       });
     }
+
+    // Update Language and Save to LocalStorage
+    function toggleLanguage() {
+      const selectedLanguage = document.getElementById("languageSwitch").value;
+      currentLanguage = selectedLanguage;
+      localStorage.setItem("selectedLanguage", currentLanguage);
+      applyTranslations();
+    }
+
+    // Initialize on Page Load
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set dropdown to currentLanguage
+      const languageSelector = document.getElementById("languageSwitch");
+      if (languageSelector) {
+        languageSelector.value = currentLanguage;
+      }
+
+      // Apply saved language
+      applyTranslations();
+    });
 
   </script>
 

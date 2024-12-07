@@ -129,14 +129,36 @@
         };
 
         // Function to toggle language
-        function toggleLanguage() {
-            const language = document.getElementById("languageSwitch").value;
+        let currentLanguage = localStorage.getItem("selectedLanguage") || "english";
+
+        // Apply Translations
+        function applyTranslations() {
             const elementsToTranslate = document.querySelectorAll("[data-translate]");
             elementsToTranslate.forEach((element) => {
                 const translationKey = element.getAttribute("data-translate");
-                element.innerHTML = translations[language][translationKey] || element.innerHTML;
+                element.innerHTML = translations[currentLanguage][translationKey] || element.innerHTML;
             });
         }
+
+        // Update Language and Save to LocalStorage
+        function toggleLanguage() {
+            const selectedLanguage = document.getElementById("languageSwitch").value;
+            currentLanguage = selectedLanguage;
+            localStorage.setItem("selectedLanguage", currentLanguage);
+            applyTranslations();
+        }
+
+        // Initialize on Page Load
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set dropdown to currentLanguage
+            const languageSelector = document.getElementById("languageSwitch");
+            if (languageSelector) {
+                languageSelector.value = currentLanguage; // Sync dropdown value with the saved language
+            }
+
+            // Apply saved language
+            applyTranslations();
+        });
     </script>
 
 </body>

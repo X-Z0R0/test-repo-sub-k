@@ -13,7 +13,7 @@ function openPopup() {
 // change language 
 const translations = {
     "english": {
-        "hello": "Hello!",
+        "hello": "Hello! Kunal",
         "payNow": "Pay Now",
         "payEMI": "Pay EMI",
         "payingForTheWholeGroup": "1. Paying for the whole group",
@@ -27,7 +27,7 @@ const translations = {
         "chatbot": "ChatBot"
     },
     "hindi": {
-        "hello": "नमस्ते!",
+        "hello": "नमस्ते! Kunal",
         "payNow": "अभी भुगतान करें",
         "payEMI": "ईएमआई का भुगतान करें",
         "payingForTheWholeGroup": "1. पूरे समूह के लिए भुगतान करना",
@@ -41,7 +41,7 @@ const translations = {
         "chatbot": "चैटबॉट"
     },
     "bengali": {
-        "hello": "কেমন আছো!",
+        "hello": "কেমন Kunal",
         "payNow": "এখনই भुगतान করুন",
         "payEMI": "ইএমআই পরিশোধ করুন",
         "payingForTheWholeGroup": "1. পুরো গ্রুপের জন্য পরিশোধ করা",
@@ -56,17 +56,31 @@ const translations = {
     }
 };
 
-let currentLanguage = "english";
-
+let currentLanguage = localStorage.getItem('selectedLanguage') || "english";
 
 
 function toggleLanguage() {
-    let selectedLanguage = document.getElementById('languageSwitch').value;
+    const selectedLanguage = document.getElementById('languageSwitch').value;
     currentLanguage = selectedLanguage;
 
-    // Update all translatable elements on the page
+    // Save selected language to localStorage
+    localStorage.setItem('selectedLanguage', currentLanguage);
+
+    // Update all translatable elements
+    updateTranslations();
+}
+
+function updateTranslations() {
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.dataset.translate;
         element.textContent = translations[currentLanguage][key];
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Set the language selector to the current language
+    document.getElementById('languageSwitch').value = currentLanguage;
+
+    // Apply translations
+    updateTranslations();
+});

@@ -352,17 +352,34 @@
         }
       };
 
-      let currentLanguage = "english";
+      let currentLanguage = localStorage.getItem("selectedLanguage") || "english";
 
-      function toggleLanguage() {
-        const selectedLanguage = document.getElementById("languageSwitch").value;
-        currentLanguage = selectedLanguage;
 
+      function applyTranslations() {
         document.querySelectorAll("[data-translate]").forEach(element => {
           const key = element.dataset.translate;
           element.textContent = translations[currentLanguage][key];
         });
       }
+      function toggleLanguage() {
+        const selectedLanguage = document.getElementById("languageSwitch").value;
+        currentLanguage = selectedLanguage;
+        localStorage.setItem("selectedLanguage", currentLanguage);
+        applyTranslations();
+      }
+
+      // Initialize on Page Load
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set dropdown to currentLanguage
+        const languageSelector = document.getElementById("languageSwitch");
+        if (languageSelector) {
+          languageSelector.value = currentLanguage;
+        }
+
+        // Apply saved language
+        applyTranslations();
+      });
+
     </script>
 
 </body>
