@@ -300,24 +300,3 @@ lang-btn1, lang-btn2, lang-btn3{
 
 
 
-
-#chatbot-btn {
-  width: 100px;
-  height: 40px;
-  border: 3px solid #2596be;
-  border-radius: 45px;
-  transition: all 0.3s;
-  cursor: pointer;
-  background: white;
-  font-size: 1em;
-  font-weight: 550;
-  position: absolute;
-  bottom: 100px;
-  right: 30px;
-}
-
-#chatbot-btn:hover {
-  background: #2596be;
-  color: white;
-  font-size: 1.1em;
-}

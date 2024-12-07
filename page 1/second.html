@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sub-K</title>
   <link rel="stylesheet" href="second.css">
+  <link rel="stylesheet" href="../chatbot.css">
   <script src="second.js"></script>
+  <script src="../chatbot.js"></script>
 </head>
 
 <body>
@@ -47,11 +49,15 @@
               <button class="close-btn" onclick="closePopup()">×</button>
               <!-- Title and options -->
               <h2 id="pay-emi" data-translate="payEMI">Pay EMI</h2>
-              <button class="blue" id="btn1"><a href="../page 2/index.html" data-translate="payingForTheWholeGroup">1. Paying for the whole group</a></button>
-              <button class="grey" id="btn2"><a href="../page 2/index.html" data-translate="payingForOneself">2. Paying for oneself</a></button>
-              <button class="grey" id="btn3"><a href="../page 2/index.html" data-translate="payingForAllExceptOneMember">3. Paying for all except one
+              <button class="blue" id="btn1"><a href="../page 2/index.html" data-translate="payingForTheWholeGroup">1.
+                  Paying for the whole group</a></button>
+              <button class="grey" id="btn2"><a href="../page 2/index.html" data-translate="payingForOneself">2. Paying
+                  for oneself</a></button>
+              <button class="grey" id="btn3"><a href="../page 2/index.html"
+                  data-translate="payingForAllExceptOneMember">3. Paying for all except one
                   member</a></button>
-              <button class="grey" id="btn4"><a href="../page 2/index.html" data-translate="payingForOneselfWithPartialPayment">4. Pay for oneself with a partial
+              <button class="grey" id="btn4"><a href="../page 2/index.html"
+                  data-translate="payingForOneselfWithPartialPayment">4. Pay for oneself with a partial
                   payment</a></button>
             </div>
           </div>
@@ -102,6 +108,12 @@
 
     <!-- chatbot btn  -->
     <button id="chatbot-btn" data-translate="chatbot">ChatBot</button>
+    <div id="video-container">
+      <video id="chatbot-video" muted loop>
+        <source src="../20241125184403344~2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
 
   </div>
 
