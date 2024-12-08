@@ -79,17 +79,24 @@
       <button><a href="../page 4/index.html" data-translate="payNow">Pay Now</a></button>
     </div>
     <button id="chatbot-btn" data-translate="chatbot">ChatBot</button>
+    <div id="video-container">
+      <video id="chatbot-video" muted loop>
+        <source src="../20241125184403344~2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- language dropdown -->
+    <div class="language-toggle">
+      <select id="languageSwitch" onchange="toggleLanguage()">
+        <option id="lang-btn1" value="english" selected>English</option>
+        <option id="lang-btn2" value="hindi">हिंदी</option>
+        <option id="lang-btn3" value="bengali">বাংলা</option>
+      </select>
+    </div>
   </div>
 
 
-  <!-- language dropdown -->
-  <div class="language-toggle">
-    <select id="languageSwitch" onchange="toggleLanguage()">
-      <option id="lang-btn1" value="english" selected>English</option>
-      <option id="lang-btn2" value="hindi">हिंदी</option>
-      <option id="lang-btn3" value="bengali">বাংলা</option>
-    </select>
-  </div>
+
 
 
   <script>
